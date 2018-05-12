@@ -11,4 +11,4 @@ image:https://badge.waffle.io/FunThomas424242/gauth.example.svg?columns=all["Waf
 Beispiel für die Realisierung einer Authentification über Google Authenticator
 
 
-
+Das Beispiel nutzt zur Authentifizierung die Lib aus dem Projekt: https://github.com/wstrange/GoogleAuth
