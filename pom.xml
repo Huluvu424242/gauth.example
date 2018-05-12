@@ -1,51 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.funthomas424242</groupId>
-  <artifactId>gauth.example</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <licenses>
-    <license>
-      <url>./LICENSE</url>
-    </license>
-  </licenses>
-  <scm>
-    <connection>scm:git:https://github.com/FunThomas424242/gauth.example.git</connection>
-    <developerConnection>scm:git:git@github.com:FunThomas424242/gauth.example.git</developerConnection>
-    <url>https://github.com/FunThomas424242/gauth.example</url>
-  </scm>
-  <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/FunThomas424242/gauth.example/issues/new</url>
-  </issueManagement>
-  <ciManagement>
-    <system>Travis</system>
-    <url>https://travis-ci.org/FunThomas424242/gauth.example</url>
-  </ciManagement>
-  <distributionManagement>
-    <repository>
-      <id>bintray-funthomas424242-funthomas424242-lib</id>
-      <name>funthomas424242-funthomas424242-lib</name>
-      <url>https://api.bintray.com/maven/funthomas424242/funthomas424242-lib/gauth.example/;publish=1</url>
-    </repository>
-  </distributionManagement>
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.funthomas424242</groupId>
+    <artifactId>gauth.example</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
-  <prerequisites>
-    <maven>3.3.9</maven>
-  </prerequisites>
+    <url>https://github.com/FunThomas424242/gauth.example</url>
+    <licenses>
+        <license>
+            <url>https://www.gnu.org/licenses/gpl-3.0.de.html</url>
+            <name>GNU LESSER GENERAL PUBLIC LICENSE
+                Version 3, 29 June 2007
+            </name>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/FunThomas424242/gauth.example.git</connection>
+        <developerConnection>scm:git:git@github.com:FunThomas424242/gauth.example.git</developerConnection>
+        <url>https://github.com/FunThomas424242/gauth.example</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/FunThomas424242/gauth.example/issues/new</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://travis-ci.org/FunThomas424242/gauth.example</url>
+    </ciManagement>
+    <distributionManagement>
+        <repository>
+            <id>bintray-funthomas424242-funthomas424242-lib</id>
+            <name>funthomas424242-funthomas424242-lib</name>
+            <url>https://api.bintray.com/maven/funthomas424242/funthomas424242-lib/gauth.example/;publish=1</url>
+        </repository>
+    </distributionManagement>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <prerequisites>
+        <maven>3.3.9</maven>
+    </prerequisites>
 
     <dependencies>
-      <dependency>
-        <groupId>com.warrenstrange</groupId>
-        <artifactId>googleauth</artifactId>
-        <version>1.1.2</version>
-      </dependency>
+        <dependency>
+            <groupId>com.warrenstrange</groupId>
+            <artifactId>googleauth</artifactId>
+            <version>1.1.2</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
