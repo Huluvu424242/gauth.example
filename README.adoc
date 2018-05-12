@@ -1,0 +1,2 @@
+# gauth.example
+Beispiel für die Realisierung einer Authentification über Google Authenticator
