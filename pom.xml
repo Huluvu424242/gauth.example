@@ -35,4 +35,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+
+  <prerequisites>
+    <maven>3.3.9</maven>
+  </prerequisites>
+
+    <dependencies>
+      <dependency>
+        <groupId>com.warrenstrange</groupId>
+        <artifactId>googleauth</artifactId>
+        <version>1.1.2</version>
+      </dependency>
+    </dependencies>
+
 </project>
