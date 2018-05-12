@@ -11,7 +11,7 @@ public class ConsoleAuthentication {
     public static void main(final String[] args) {
         final GoogleAuthenticator gAuth = new GoogleAuthenticator();
         final GoogleAuthenticatorKey key = gAuth.createCredentials();
-        final String seed=key.getKey();
+        final String seed = key.getKey();
 
         System.out.println("Starten Sie nun ihre Google Authenticator App und fügen Sie folgendes Konto hinzu: 'Test'\n\n");
         System.out.println("Bitte notieren Sie folgenden Sicherheitsschlüssel und schützen Sie diesen vor dem Zugriff Anderer:\n");
@@ -22,12 +22,12 @@ public class ConsoleAuthentication {
         System.out.println("Prüfen Sie Ihren Zugang indem Sie nun den generierten Code vom Google Authenticator eingeben und  mit Enter bestätigen.");
 
         Scanner s = new Scanner(System.in);
-        final int code= s.nextInt();
+        final int code = s.nextInt();
 
         final boolean isValidCode = isCodeValid(seed, code);
-        if( isValidCode ){
+        if (isValidCode) {
             System.out.println("Zugang gewährt!");
-        }else{
+        } else {
             System.out.println("Zugang verweigert!");
         }
     }
