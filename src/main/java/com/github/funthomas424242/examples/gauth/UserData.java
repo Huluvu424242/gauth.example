@@ -31,10 +31,14 @@ import java.util.List;
 @RadesAddAccessor
 public class UserData {
 
-    int code;
+    protected UserData(){
 
-    String secretKey;
+    }
 
-    List<Integer> scratchCodes;
+    protected int code;
+
+    protected String secretKey;
+
+    protected List<Integer> scratchCodes;
 
 }
