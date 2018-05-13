@@ -31,14 +31,11 @@ import java.util.List;
 @RadesAddAccessor
 public class UserData {
 
-    protected UserData(){
-
-    }
-
     protected int code;
 
     protected String secretKey;
 
     protected List<Integer> scratchCodes;
 
+    protected UserData(){ }
 }
