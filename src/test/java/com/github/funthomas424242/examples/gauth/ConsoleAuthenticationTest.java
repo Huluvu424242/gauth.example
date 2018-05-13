@@ -49,7 +49,7 @@ public class ConsoleAuthenticationTest {
         System.setIn(inStream);
 
         final ConsoleAuthentication authExample = new ConsoleAuthentication();
-        authExample.main(null);
+        authExample.run();
 
         assertTrue(baos.toString().contains("Zugang verweigert!"));
     }
