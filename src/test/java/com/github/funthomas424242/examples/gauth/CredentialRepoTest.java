@@ -22,34 +22,33 @@ package com.github.funthomas424242.examples.gauth;
  * #L%
  */
 
+import com.warrenstrange.googleauth.GoogleAuthenticator;
+import com.warrenstrange.googleauth.GoogleAuthenticatorKey;
 import org.junit.jupiter.api.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ConsoleAuthenticationTest {
+class CredentialRepoTest {
 
 
+    /**
+     * Bitte den Test nicht als Vorbild nehmen - er ist Quark.
+     */
     @Test
-    public void anmeldungZugriffVerweigert() {
+    public void anmeldungVerweigertTotalSimple() {
+
+        final String userName = "Test";
+        final GoogleAuthenticator gAuth = new GoogleAuthenticator();
+        final GoogleAuthenticatorKey key = gAuth.createCredentials(userName);
+        final String seed = key.getKey();
 
 
-        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        final PrintStream ps = new PrintStream(baos);
-        System.setOut(ps);
+        final int code = GAuthClient.getCode(seed);
+        boolean isCodeValid = gAuth.authorizeUser(userName, code);
+        assertTrue(isCodeValid);
 
-        // ein definitiv unglültiger Kode, da zu lang (zumindest für den aktuellen GoogleAuthenticator in 2018).
-        final byte[] passCode = "12343434".getBytes();
-        final ByteArrayInputStream inStream = new ByteArrayInputStream(passCode);
-        System.setIn(inStream);
 
-        final ConsoleAuthentication authExample = new ConsoleAuthentication();
-        authExample.main(null);
 
-        assertTrue(baos.toString().contains("Zugang verweigert!"));
+
     }
-
 }
