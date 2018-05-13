@@ -32,11 +32,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ConsoleAuthenticationTest {
 
-    /**
-     * Bitte den Test nicht als Vorbild nehmen - er ist Quark.
-     */
+
     @Test
-    public void anmeldungVerweigertTotalSimple() {
+    public void anmeldungZugriffVerweigert() {
 
 
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -53,4 +51,5 @@ public class ConsoleAuthenticationTest {
 
         assertTrue(baos.toString().contains("Zugang verweigert!"));
     }
+
 }
